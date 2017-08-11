@@ -1,17 +1,13 @@
-// 1. First select and store the elements you'll be working with
-// 2. Create your `submit` event for getting the user's search term
-// 3. Create your `fetch` request that is called after a submission
-// 4. Create a way to append the fetch results to your page
 // 5. Create a way to listen for a click that will play the song in the audio play
 
+let audio = document.querySelector('audio');
 let input = document.querySelector('input');
 let form = document.querySelector('form');
 form.addEventListener('submit', function(e){
   e.preventDefault();
   goFetch(input.value);
 });
-// let button = document.querySelector('button');
-// button.addEventListener('click', goFetch);
+
 
 
 function goFetch(search) {
@@ -34,14 +30,18 @@ fetch('https://itunes.apple.com/search?term=' + search)
 
         for (let i = 0; i < results.length; i++) {
           let result = results[i];
+          let div = document.createElement('div');
 
           let template = `
-          <div>
           <img src=${result.artworkUrl100}>
           <p> ${result.trackName} </p>
-          <p> ${result.artistName} </p>
-          </div>`;
-          container.innerHTML += template;
+          <p> ${result.artistName} </p>`;
+
+          div.addEventListener('click', function() {
+            audio.src = result.previewUrl;
+          });
+          div.innerHTML += template;
+          container.appendChild(div);
         }
 
       });
