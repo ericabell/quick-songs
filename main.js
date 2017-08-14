@@ -1,5 +1,5 @@
-// 5. Create a way to listen for a click that will play the song in the audio play
-
+let player = document.querySelector('.player');
+let playerImage = document.querySelector('.player-image');
 let audio = document.querySelector('audio');
 let input = document.querySelector('input');
 let form = document.querySelector('form');
@@ -8,7 +8,8 @@ form.addEventListener('submit', function(e){
   goFetch(input.value);
 });
 
-
+// BUG
+goFetch('usher');
 
 function goFetch(search) {
 console.log('fetch!');
@@ -21,7 +22,6 @@ fetch('https://itunes.apple.com/search?term=' + search)
         return;
       }
 
-      // Examine the text in the response
       response.json().then(function(data) {
         console.log(data);
         let results = data.results;
@@ -39,6 +39,8 @@ fetch('https://itunes.apple.com/search?term=' + search)
 
           div.addEventListener('click', function() {
             audio.src = result.previewUrl;
+            player.style.display = 'flex';
+            playerImage.src = result.artworkUrl100;
           });
           div.innerHTML += template;
           container.appendChild(div);
