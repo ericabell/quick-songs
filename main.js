@@ -9,7 +9,7 @@ form.addEventListener('submit', function(e){
 });
 
 // BUG
-goFetch('usher');
+// goFetch('usher');
 
 function goFetch(search) {
 console.log('fetch!');

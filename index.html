@@ -4,6 +4,7 @@
 <head>
   <title>iTunes Music Search</title>
   <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -11,20 +12,22 @@
   <div class="container">
     <header>
       <h1>Music Search</h1>
-    </header>
-    <section class="search">
+
       <form class="search-form">
-        <input id='input' type="text" name="" value="" placeholder="search for artist">
-        <input type="submit" name="" value="SUBMIT">
+        <input class="search-input" type="text" placeholder="search for artist">
+        <div class='search-go'><i class="fa fa-search"></i></div>
       </form>
-    </section>
-    <section class="player hidden">
-      <img class="player-image" src="" alt="img">
-      <div class="player-side">
-        <audio class="player-music" controls="controls" src=""></audio>
-        <p class="player-info">Now playing: song by artist</p>
+
+      <div class="player">
+        <img class="player-image" src="" alt="img">
+        <div class="player-side">
+          <audio class="player-music" controls="controls" src=""></audio>
+          <p class="player-info">Now playing: song by artist</p>
+        </div>
       </div>
-    </section>
+
+    </header>
+
     <section class="results"></section>
     <footer>footer</footer>
   </div>
