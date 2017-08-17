@@ -23,7 +23,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, .6);
+  background: #982129;
 
 }
 
@@ -76,7 +76,7 @@ form {
 
 .player {
   /*width: 500px;*/
-  margin: 0 auto;
+  margin: 10px auto;
   display: flex;
   /*justify-content: center;*/
 }
@@ -90,7 +90,7 @@ form {
 
 .player-side {
   /*flex-grow: 1;*/
-  background: rgba(0, 0, 0, .4);
+  /*background: rgba(0, 0, 0, .4);*/
   border-radius: 10px;
 }
 
@@ -119,6 +119,15 @@ form {
 .result:hover {
   background: rgba(0, 0, 0, .6);
 
+}
+
+.result img {
+  border-radius: 10px;
+}
+
+.result p:last-child{
+  font-size: 1.2em;
+  color: #FEE140;
 }
 
 footer {

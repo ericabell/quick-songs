@@ -1,5 +1,6 @@
 let player = document.querySelector('.player');
 let playerImage = document.querySelector('.player-image');
+let playerInfo = document.querySelector('.player-info');
 let audio = document.querySelector('audio');
 let input = document.querySelector('input');
 let form = document.querySelector('form');
@@ -9,7 +10,7 @@ form.addEventListener('submit', function(e){
 });
 
 // BUG
-// goFetch('usher');
+goFetch('usher');
 
 function goFetch(search) {
 console.log('fetch!');
@@ -41,6 +42,7 @@ fetch('https://itunes.apple.com/search?term=' + search)
             audio.src = result.previewUrl;
             player.style.display = 'flex';
             playerImage.src = result.artworkUrl100;
+            playerInfo.innerHTML = `${result.trackName} <br> ${result.artistName}`
           });
           div.innerHTML += template;
           container.appendChild(div);
