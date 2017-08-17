@@ -31,7 +31,7 @@ fetch('https://itunes.apple.com/search?term=' + search)
         for (let i = 0; i < results.length; i++) {
           let result = results[i];
           let div = document.createElement('div');
-
+          div.classList.add('result');
           let template = `
           <img src=${result.artworkUrl100}>
           <p> ${result.trackName} </p>
