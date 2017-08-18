@@ -3,14 +3,19 @@ let playerImage = document.querySelector('.player-image');
 let playerInfo = document.querySelector('.player-info');
 let audio = document.querySelector('audio');
 let input = document.querySelector('input');
+let search = document.querySelector('.search-go');
+search.addEventListener('click', e => {
+  e.preventDefault();
+  goFetch(input.value);
+});
 let form = document.querySelector('form');
 form.addEventListener('submit', function(e){
   e.preventDefault();
   goFetch(input.value);
 });
 
-// BUG
-goFetch('usher');
+// TODO take this out
+goFetch('the weeknd');
 
 function goFetch(search) {
 console.log('fetch!');
@@ -36,7 +41,8 @@ fetch('https://itunes.apple.com/search?term=' + search)
           let template = `
           <img src=${result.artworkUrl100}>
           <p> ${result.trackName} </p>
-          <p> ${result.artistName} </p>`;
+          <p> ${result.collectionName}</p>
+          <p><span class="fancy">${result.artistName}</span></p>`;
 
           div.addEventListener('click', function() {
             audio.src = result.previewUrl;

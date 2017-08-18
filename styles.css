@@ -12,85 +12,76 @@ body {
 
 .container {
   position: relative;
-  height: 100vh;
 }
 
 header {
   font-family: 'Lobster', cursive;
   text-transform: uppercase;
   display: flex;
-  /*background: rgba(0, 0, 0, .8);*/
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100%;
   position: fixed;
   top: 0;
-  width: 100%;
+  background: rgba(0, 0, 0, .8);
   background: #982129;
-
 }
 
-header h1 {
+.logo {
   flex-basis: 30%;
+  margin: 30px 0;
+  color: #FEE140;
 }
 
 form {
   display: flex;
-  margin: 40px;
 }
 
 .search-go {
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0, .2);
   padding: 10px;
   border-radius: 10px;
   margin-left: 10px;
-  color: gray;
+  color: white;
 }
 .search-go:hover {
-  background: rgba(0, 0, 0, .6);
-  color: white;
+  background: rgba(0, 0, 0, .4);
 }
 
 .search-input {
   height: 30px;
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0, .2);
   border-radius: 10px;
   border: 0;
   font-size: 1em;
   padding: 10px;
-  color: white;
-
-  /*box-sizing: border-box;*/
-
+  color: #FEE140;
 }
+
 .search-input:hover {
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, .4);
 
 }
 .search-input:focus {
-  background: rgba(0, 0, 0, .6);
   outline: none;
 }
 
-
 ::-webkit-input-placeholder {
-  color: gray;
+  color: white;
 }
 
 .player {
-  /*width: 500px;*/
-  margin: 10px auto;
   display: flex;
-  /*justify-content: center;*/
 }
 
 .player-image {
   width: 100px;
   height: 100px;
   border-radius: 10px;
-  /*flex-basis: 20%;*/
 }
 
 .player-side {
-  /*flex-grow: 1;*/
-  /*background: rgba(0, 0, 0, .4);*/
   border-radius: 10px;
 }
 
@@ -100,10 +91,10 @@ form {
 }
 
 .results {
-  margin-top: 200px;
+  margin-top: 150px;
+  margin-bottom: 100px;
   display: flex;
   flex-wrap: wrap;
-
 }
 
 .results div {
@@ -111,14 +102,13 @@ form {
   margin: 10px;
   flex-basis: 15%;
   flex-grow: 1;
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0, .2);
   font-size: .6em;
   border-radius: 10px;
 }
 
 .result:hover {
-  background: rgba(0, 0, 0, .6);
-
+  background: rgba(0, 0, 0, .4);
 }
 
 .result img {
@@ -127,12 +117,22 @@ form {
 
 .result p:last-child{
   font-size: 1.2em;
-  color: #FEE140;
+  /*color: #982129;*/
 }
 
 footer {
   position: absolute;
-  bottom: 0;
+  width: 100%;
+  background: #982129;
+  /*background-image: linear-gradient(180deg, #FEE140 20%, #982129 80%);*/
+  padding: 20px 0;
+  font-size: .9em;
+}
+
+.fancy {
+  font-size: 1.1em;
+  font-family: 'Lobster', cursive;
+  color: #FEE140;
 }
 
 .hidden {
