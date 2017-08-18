@@ -41,14 +41,14 @@ fetch('https://itunes.apple.com/search?term=' + search)
           let template = `
           <img src=${result.artworkUrl100}>
           <p> ${result.trackName} </p>
-          <p> ${result.collectionName}</p>
           <p><span class="fancy">${result.artistName}</span></p>`;
-
+          // <p> ${result.collectionName}</p>
+          // <br>${result.collectionName}
           div.addEventListener('click', function() {
             audio.src = result.previewUrl;
             player.style.display = 'flex';
             playerImage.src = result.artworkUrl100;
-            playerInfo.innerHTML = `${result.trackName} <br> ${result.artistName}`
+            playerInfo.innerHTML = `${result.trackName}<br>${result.collectionName}<br>${result.artistName}`
           });
           div.innerHTML += template;
           container.appendChild(div);
