@@ -9,5 +9,5 @@
 - How to work with the iTunes API
 
 #### Screenshot of finished product:
-![alt text](sketch1.jpg "img 2")
+![alt text](sketch1.jpg "img 1")
 ![alt text](sc1.png "img 1")
